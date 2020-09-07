@@ -12,15 +12,17 @@ exports.home = async(req,res)=>{
 exports.getintouch = async(req,res)=>{
     try{
         const newuser = new getintouchschema(req.body);
-        console.log(newuser);
-        res.send({
-            status:200,
+        //console.log(newuser);
+        res.status(200)
+            .send({
+            status:"success",
             message:'We will inform you about our latest updates'
         });
     }
     catch(err){
-        res.send({
-            status:500,
+        res.staus(500)
+            .send({
+            status:"fail",
             message:'Please try again later..'
         });
     }
