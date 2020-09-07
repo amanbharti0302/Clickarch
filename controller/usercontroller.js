@@ -11,8 +11,9 @@ exports.home = async(req,res)=>{
 
 exports.getintouch = async(req,res)=>{
     try{
-        const newuser = new getintouchschema(req.body);
-        //console.log(newuser);
+        const newuser = await getintouchschema.create(req.body);
+
+        console.log(newuser);
         res.status(200)
             .send({
             status:"success",
